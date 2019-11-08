@@ -13,6 +13,7 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.Elevator;
+import frc.robot.subsystems.Arms;
 
 public class Robot extends TimedRobot
 {
@@ -23,6 +24,7 @@ public class Robot extends TimedRobot
   public static OI OI;
   public static Drivetrain DRIVETRAIN;
   public static Elevator ELEVATOR;
+  public static Arms ARMS;
   public static PathFollower PATHFOLLOWER;
 
   /*****
@@ -38,6 +40,7 @@ public class Robot extends TimedRobot
     OI = new OI();
     DRIVETRAIN = new Drivetrain();
     ELEVATOR = new Elevator();
+    ARMS = new Arms();
     PATHFOLLOWER = new PathFollower();
     Robot.PATHFOLLOWER.init();
     this.autoFinished = false;
@@ -60,6 +63,7 @@ public class Robot extends TimedRobot
     Scheduler.getInstance().disable();
     DRIVETRAIN.stop();
     ELEVATOR.stop();
+    ARMS.stop();
     Robot.PATHFOLLOWER.stop();
   }
 
